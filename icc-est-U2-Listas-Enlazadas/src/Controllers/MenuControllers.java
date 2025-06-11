@@ -1,5 +1,6 @@
 package Controllers;
 
+import Models.Contact;
 import Views.ConsoleView;
 
 public class MenuControllers {
@@ -16,22 +17,26 @@ public class MenuControllers {
         consoleView.displayMenu();
     }
     private void addContact() {
-        consoleView.getline();
-        String name = consoleView.getline();
-        String phone = consoleView.getline();
-        contactManage.addContact(new Models.Contact(name, phone));
+        consoleView.showMensage("Ingrese nombre:");
+        String name = consoleView.getLine();
+        consoleView.showMensage("Ingrese teléfono:");
+        String phone = consoleView.getLine();
+        contactManage.addContact(new Contact(name, phone));
         consoleView.showMensage("Contacto agregado: " + name);
+        
        
         
     }
     private void deleteContact() {
-        consoleView.getline();
-        String name = consoleView.getline();
+        consoleView.showMensage("Ingrese nombre del contacto a eliminar:");
+        String name = consoleView.getLine();
         contactManage.deleteContactByName(name);
-        consoleView.showMensage("Contacto eliminado: " + name);
+        
     }
     private void printList() {
+        consoleView.showMensage("Lista de contactos:");
         contactManage.printList();
+        
     }
 
 

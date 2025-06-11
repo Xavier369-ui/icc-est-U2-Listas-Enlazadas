@@ -3,6 +3,12 @@ package Views;
 import java.util.Scanner;
 
 public class ConsoleView {
+    private Scanner scanner;
+
+    public ConsoleView(){
+        Scanner scanner = new Scanner(System.in);
+
+    }
 
 
     public void displayMenu() {
@@ -19,10 +25,8 @@ public class ConsoleView {
         System.out.println(message);
     }
 
-    public String getline() {
-        Scanner scanner = new Scanner(System.in);
+    public String getLine() {
         return scanner.nextLine();
-       
-       
+
     }
 }
